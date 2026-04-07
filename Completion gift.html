@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sa Pagitan ng mga Taludtod</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Garamond', serif;
+    background: linear-gradient(135deg, #ffd6e8, #fff0f6, #ffe4ec);
+    color: #4a2b3a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 750px;
+    padding: 45px 28px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.25);
+  }
+
+  h1 {
+    font-family: 'Garamond', serif;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #c2185b;
+    letter-spacing: 1px;
+  }
+
+  .line {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.8s ease;
+    font-size: 17px;
+    line-height: 2;
+    margin: 18px 0;
+    white-space: pre-line;
+    color: #5a3a4a;
+    font-family: 'Garamond', serif;
+  }
+
+  .line.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .closing {
+    margin-top: 35px;
+    font-style: italic;
+    color: #d81b60;
+    font-size: 18px;
+    opacity: 0;
+    transition: 1s ease;
+    font-family: 'Garamond', serif;
+  }
+
+  .closing.show {
+    opacity: 1;
+  }
+
+  .hint {
+    margin-top: 40px;
+    font-size: 12px;
+    opacity: 0.5;
+    font-family: 'Garamond', serif;
+  }
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>"Sa Pagitan ng mga Taludtod"</h1>
+	<h1> By Maki </h1>
+
+    <div class="line">Isinulat kita sa katahimikan,
+sa mga gilid na walang nakakabasa kailanman,
+sa mga gabing ang tanging ingay lang
+ay pusong unti-unting nasasaktan.</div>
+
+    <div class="line">Bawat tula’y alaala,
+ibang anyo ng pangalan mo sa bawat talata,
+isinambit sa lihim na pagnanais...
+ngunit kailanma’y ‘di naging payapa.</div>
+
+    <div class="line">Ginawa kong taludtod ang sakit,
+itinago ang ngiti mo sa bawat awit,
+pilit hinahawak ang sandali
+na dahan-dahang kumakalas sa dibdib.</div>
+
+    <div class="line">Iba ang pakiramdam ng silid-aralan,
+may layo sa bawat titig na pinagmamasdan,
+dalawang pusong nagdadaan lang...
+may damdaming ‘di kayang pangalanan.</div>
+
+    <div class="line">Ngunit ang panahon ay marunong maghilom,
+at ang puso’y marunong ding magtanong,
+kung sa tahimik na pagkakatinginan...
+may damdaming muling bumabangon.</div>
+
+    <div class="line">Patapos na ang taon ng ating alaala,
+mga kabanatang sabay nating kinatha,
+at sa bawat titig na ‘di sinasadya...
+may “tayo” pa palang nabubuo nang kusa.</div>
+
+    <div class="line">Hindi sa perpektong salita,
+ni sa mga linyang paulit-ulit kong binigkas nang mag-isa,
+kundi sa mga sandaling tahimik lang tayo...
+pero pareho nang may nadarama.</div>
+
+    <div class="line">At marahil isusulat pa rin kita,
+ngunit mas marahan na kaysa dati kong nadarama,
+hindi na dahil sa pagkawala mo...
+kundi sa kung pa’no tayo muling nagkakilala.</div>
+
+    <div class="closing">
+      Kung may isang bagay akong hindi na kayang itago sa pagitan ng mga taludtod, ikaw ‘yon.
+    </div>
+
+    <div class="hint">(If you found this, you already know.)</div>
+  </div>
+
+  <script>
+    const lines = document.querySelectorAll(".line");
+    const closing = document.querySelector(".closing");
+
+    let delay = 500;
+
+    lines.forEach((line, index) => {
+      setTimeout(() => {
+        line.classList.add("show");
+      }, delay * (index + 1));
+    });
+
+    setTimeout(() => {
+      closing.classList.add("show");
+    }, delay * (lines.length + 2));
+  </script>
+</body>
+</html>
